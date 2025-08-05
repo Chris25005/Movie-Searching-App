@@ -33,7 +33,7 @@ const MovieDetail = () => {
         <img
           src={movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/300'}
           alt={movie.Title}
-          className="w-full md:w-64 rounded"
+          className="w-full md:w-64 rounded"ppo
         />
         <div>
           <h2 className="text-2xl font-bold mb-2">{movie.Title} ({movie.Year})</h2>

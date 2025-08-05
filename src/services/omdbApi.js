@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
-const BASE_URL = 'https://www.omdbapi.com/';
-
+const BASE_URL = 'https://www.omdbapi.com/?t=avengers&apikey=aacdb714';
 
 export const fetchMovies = async (query, type = '', page = 1) => {
   const res = await axios.get(BASE_URL, {

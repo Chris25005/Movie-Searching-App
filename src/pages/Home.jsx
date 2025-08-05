@@ -32,19 +32,19 @@ const Home = () => {
   }, [page, type]);
 
   return (
-    <div className="p-6 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">🎬 Movie Search App</h1>
+    <div className="flex flex-col md:flex-row justify-between items-center p-4 gap-4">
+      <h1 className="text-xl font-bold flex items-center gap-2">🎬 Movie Searching App</h1>
 
       <SearchBar query={query} setQuery={setQuery} onSearch={() => { setPage(1); getMovies(); }} />
 
-      <div className="mb-6">
+      <div className="flex flex-col md:flex-row gap-4 items-center w-full md:w-auto">
         <select
           value={type}
           onChange={(e) => {
             setPage(1);
             setType(e.target.value);
           }}
-          className="border p-2 rounded"
+          className="border px-4 py-2 rounded w-full md:w-64"
         >
           <option value="">All Types</option>
           <option value="movie">Movie</option>
@@ -55,7 +55,7 @@ const Home = () => {
 
       {error && <p className="text-red-500">{error}</p>}
 
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
         {movies.map((movie) => (
           <MovieCard key={movie.imdbID} movie={movie} />
         ))}
